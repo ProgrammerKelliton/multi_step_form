@@ -16,6 +16,9 @@ module.exports = {
         "cool-gray": " hsl(231, 11%, 63%)",
         "light-gray": " hsl(229, 24%, 87%)",
       },
+      backgroundImage: {
+        "side-bar-desktop": "url('/images/sideBarDesktop.svg')",
+      },
     },
     fontWeight: {
       normal: "400",
