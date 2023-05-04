@@ -1,6 +1,7 @@
-import Container from "@/components/organisms/container/container";
+// Components
 import LayoutManager from "@/components/organisms/layoutManager/layoutManager";
 import StepsManager from "@/components/organisms/stepsManager/stepsManager";
+import Container from "@/components/organisms/container/container";
 
 export default function Home() {
   return (

@@ -1,3 +1,4 @@
+// Components
 import Step from "@/components/molecules/step/step";
 
 export default function StepsManager() {

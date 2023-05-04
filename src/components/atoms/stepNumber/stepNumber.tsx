@@ -1,3 +1,4 @@
+// Types
 import { StepNumberProps } from "@/types/step.types";
 
 export default function StepNumber({ number, select }: StepNumberProps) {
