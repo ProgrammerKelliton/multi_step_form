@@ -12,6 +12,7 @@ import Header from "@/components/molecules/header/header";
 
 // React
 import { useEffect, useState } from "react";
+import Form from "../form/form";
 
 export default function LayoutManager({ layoutStep }: LayoutManagerProps) {
   const [content, setContent] = useState<HeaderProps>();
@@ -23,11 +24,13 @@ export default function LayoutManager({ layoutStep }: LayoutManagerProps) {
   }, []);
 
   return (
-    <div className="w-2/3 pt-10">
+    <div className="w-2/3 pt-10 flex gap-8 flex-col">
       <Header
         title={content?.title || "error"}
         subTitle={content?.subTitle || "error"}
       />
+
+      <Form />
     </div>
   );
 }
