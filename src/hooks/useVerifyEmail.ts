@@ -1,17 +1,20 @@
 // Component
-import GlobalErros from "@/erros/globalErros";
+import GlobalError from "@/erros/globalErros";
 
 // Types
 import { UseVerifyEmailProps } from "@/types/useVerifyEmail.types";
 
 export default function UseVerifyEmail({ email }: UseVerifyEmailProps) {
   // todo: Find the user with this email
-  if (email.trim() !== "" && email === "kelliton@gmail.com") {
-    return email;
-  }
-  if (email.trim() === "") {
-    return email;
+  if (email.trim() !== "") {
+    if (email === "kelliton@gmail.com") return email;
+
+    if (!email.includes("@")) {
+      throw GlobalError({ messageError: "This email isn't valid" });
+    } else {
+      throw GlobalError({ messageError: "This email already exists" });
+    }
   } else {
-    throw GlobalErros({ messageError: "This email already exists" });
+    return email;
   }
 }

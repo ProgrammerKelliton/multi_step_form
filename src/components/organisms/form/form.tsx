@@ -22,7 +22,6 @@ export default function Form() {
 
       <Input
         name="Email Address"
-        messageError="This email already exists"
         placeholder="vanessamint@"
         required
         type="email"
@@ -33,7 +32,6 @@ export default function Form() {
 
       <Input
         name="Phone Number"
-        messageError="This email already exists"
         placeholder="e.g. +1 234 567 890"
         required
         type="number"

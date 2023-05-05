@@ -8,24 +8,26 @@ import ErrorMessageLabel from "@/components/atoms/errorMessageLabel/errorMessage
 import { useState } from "react";
 
 export default function Input({
-  messageError,
   name,
   onChange,
   placeholder,
   type,
   required,
 }: InputProps) {
-  const [foundMessageError, setFoundMessageError] = useState(false);
+  const [messageError, setMessageError] = useState<string>("");
 
   function handlerOnChangeEvent({
     onChange,
     event,
   }: handlerOnChangeEventProps) {
     try {
-      setFoundMessageError(false);
+      setMessageError("");
       return onChange(event);
     } catch (error) {
-      setFoundMessageError(true);
+      const formatError = String(error).replace("Error: ", "");
+      console.log(formatError);
+
+      setMessageError(formatError);
     }
   }
 
@@ -34,10 +36,7 @@ export default function Input({
       <div className="flex justify-between">
         <label className="flex flex-col text-marine-blue">{name}</label>
 
-        <ErrorMessageLabel
-          foundMessageError={foundMessageError}
-          messageError={messageError}
-        />
+        <ErrorMessageLabel messageError={messageError} />
       </div>
 
       <input

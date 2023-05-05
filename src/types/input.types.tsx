@@ -1,8 +1,6 @@
 import { ChangeEvent, HTMLInputTypeAttribute } from "react";
-import { InputErrors } from "./erros.types";
 
-// ! InputErrors extends property messageError
-export interface InputProps extends InputErrors {
+export interface InputProps {
   name: string;
   placeholder: string;
   type: HTMLInputTypeAttribute;
