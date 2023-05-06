@@ -32,11 +32,8 @@ export default function Input({
   }
 
   useEffect(() => {
-    if (messageError !== "") {
-      setInputColorError("focus:outline-strawberry-red");
-    } else {
-      setInputColorError("focus:outline-purplish-blue");
-    }
+    if (messageError !== "") setInputColorError("focus:outline-strawberry-red");
+    else setInputColorError("focus:outline-purplish-blue");
   }, [messageError]);
 
   return (
@@ -55,7 +52,6 @@ export default function Input({
           onChange && handlerOnChangeEvent({ onChange, event })
         }
         required={required}
-        id="input"
       />
     </div>
   );

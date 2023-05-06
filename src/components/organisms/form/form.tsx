@@ -1,11 +1,11 @@
 // Components
 import Input from "@/components/molecules/input/input";
-import { GlobalContext } from "@/context/global";
 
 // Hook
 import UseVerifyEmail from "@/hooks/useVerifyEmail";
 
 // Context
+import { GlobalContext } from "@/context/global";
 import { useContext } from "react";
 
 export default function Form() {

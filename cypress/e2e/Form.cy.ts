@@ -1,3 +1,4 @@
+// Variables
 const STEP_IN_HIGHTLIGHT = ".bg-light-blue";
 const INPUT_PHONENUMBER = ":nth-child(3) > #input";
 const GOBACK_BUTTON = "Go Back";
@@ -6,6 +7,7 @@ const LABEL_ERROR = ".text-strawberry-red";
 const INPUT_EMAIL = ":nth-child(2) > #input";
 const INPUT_NAME = ":nth-child(1) > #input";
 
+// Functions
 function ClickOnNextButtonAndVerifyIfGoBackExists() {
   for (let index = 0; index !== 4; index++) {
     cy.get(NEXT_BUTTON).click();
@@ -49,7 +51,7 @@ function InitCypress() {
   cy.visit("./");
 }
 
-describe("Next step", () => {
+describe("Form", () => {
   it("should show goBack button when click next button and should hidden goBack button when step is 1", () => {
     InitCypress();
 

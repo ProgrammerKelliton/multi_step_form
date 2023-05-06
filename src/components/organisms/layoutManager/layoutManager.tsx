@@ -12,6 +12,8 @@ import Form from "../form/form";
 
 // React
 import { useContext, useEffect, useState } from "react";
+
+// Context
 import { GlobalContext } from "@/context/global";
 
 export default function LayoutManager() {

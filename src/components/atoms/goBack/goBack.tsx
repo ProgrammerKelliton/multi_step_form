@@ -2,9 +2,7 @@
 import { GoBackProps } from "@/types/goBack.types";
 
 export default function GoBack({ number, onClick }: GoBackProps) {
-  if (number === 1) {
-    return <span></span>;
-  }
+  if (number === 1) return <span></span>;
 
   return (
     <button
