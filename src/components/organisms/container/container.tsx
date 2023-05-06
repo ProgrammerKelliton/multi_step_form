@@ -1,12 +1,16 @@
 "use client";
 
 // Types
-import { GlobalContext } from "@/context/global";
 import { ContainerProps } from "@/types/container.types";
+
+// Global
+import { GlobalContext } from "@/context/global";
+
+// React
 import { useState } from "react";
 
 export default function Container({ children }: ContainerProps) {
-  const [step, setStep] = useState<number>(0);
+  const [step, setStep] = useState<number>(1);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");

@@ -1,6 +1,7 @@
 // Components
 import LayoutManager from "@/components/organisms/layoutManager/layoutManager";
 import StepsManager from "@/components/organisms/stepsManager/stepsManager";
+import Navigation from "@/components/molecules/navigation/navigation";
 import Container from "@/components/organisms/container/container";
 
 export default function Home() {
@@ -9,7 +10,12 @@ export default function Home() {
       <Container>
         <StepsManager />
 
-        <LayoutManager layoutStep="your info" />
+        <div className="w-2/3 pt-10 flex gap-16 flex-col">
+          {/* Mudará de acordo o step */}
+          <LayoutManager layoutStep="your info" />
+
+          <Navigation />
+        </div>
       </Container>
     </main>
   );

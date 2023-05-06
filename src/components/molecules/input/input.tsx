@@ -25,7 +25,6 @@ export default function Input({
       return onChange(event);
     } catch (error) {
       const formatError = String(error).replace("Error: ", "");
-      console.log(formatError);
 
       setMessageError(formatError);
     }
