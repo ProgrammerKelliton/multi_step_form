@@ -46,6 +46,7 @@ export default function Input({
           onChange && handlerOnChangeEvent({ onChange, event })
         }
         required={required}
+        id="input"
       />
     </div>
   );
