@@ -12,7 +12,7 @@ export default function Home() {
 
         <div className="w-2/3 pt-10 flex gap-16 flex-col">
           {/* Mudará de acordo o step */}
-          <LayoutManager layoutStep="your info" />
+          <LayoutManager />
 
           <Navigation />
         </div>

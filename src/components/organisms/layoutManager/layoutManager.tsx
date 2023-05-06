@@ -1,7 +1,6 @@
 "use client";
 
 // Types
-import { LayoutManagerProps } from "@/types/layoutManager.types";
 import { HeaderProps } from "@/types/header.types";
 
 // Logic scripts
@@ -12,16 +11,20 @@ import Header from "@/components/molecules/header/header";
 import Form from "../form/form";
 
 // React
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GlobalContext } from "@/context/global";
 
-export default function LayoutManager({ layoutStep }: LayoutManagerProps) {
+export default function LayoutManager() {
   const [content, setContent] = useState<HeaderProps>();
+  const {
+    step: { number },
+  } = useContext(GlobalContext);
 
   useEffect(() => {
-    const layoutContent = LayoutContent({ layoutStep: "your info" });
+    const layoutContent = LayoutContent({ stepNumber: number });
 
     if (layoutContent) setContent(layoutContent);
-  }, []);
+  }, [number]);
 
   return (
     <div className="w-full pt-10 flex gap-8 flex-col">

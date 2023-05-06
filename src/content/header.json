@@ -2,5 +2,17 @@
   "your info": {
     "title": "Personal Info",
     "subTitle": "Please provide your name, email address, and phone number."
+  },
+  "select plan": {
+    "title": "Select your plan",
+    "subTitle": "You have the option of monthly or yearly billing."
+  },
+  "add-ons": {
+    "title": "Pick add-ons",
+    "subTitle": "Add-ons help enhance your gaming experience."
+  },
+  "summary": {
+    "title": "Finishing up",
+    "subTitle": "Double-check everything looks OK before confirming."
   }
 }

@@ -5,7 +5,7 @@ import { InputProps, handlerOnChangeEventProps } from "@/types/input.types";
 import ErrorMessageLabel from "@/components/atoms/errorMessageLabel/errorMessageLabel";
 
 // React
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Input({
   name,
@@ -15,6 +15,7 @@ export default function Input({
   required,
 }: InputProps) {
   const [messageError, setMessageError] = useState<string>("");
+  const [inputColorError, setInputColorError] = useState<string>("");
 
   function handlerOnChangeEvent({
     onChange,
@@ -30,6 +31,14 @@ export default function Input({
     }
   }
 
+  useEffect(() => {
+    if (messageError !== "") {
+      setInputColorError("focus:outline-strawberry-red");
+    } else {
+      setInputColorError("focus:outline-purplish-blue");
+    }
+  }, [messageError]);
+
   return (
     <div className="flex gap-2 flex-col">
       <div className="flex justify-between">
@@ -39,7 +48,7 @@ export default function Input({
       </div>
 
       <input
-        className="border border-solid border-cool-gray rounded-lg px-4 py-3 placeholder:text-marine-blue placeholder:font-medium focus:outline-purplish-blue text-marine-blue font-medium"
+        className={`${inputColorError} border border-solid border-cool-gray rounded-lg px-4 py-3 placeholder:text-marine-blue placeholder:font-medium text-marine-blue font-medium`}
         type={type}
         placeholder={placeholder}
         onChange={(event) =>
