@@ -19,11 +19,13 @@ export default function Plan({
   onClick,
 }: PlanProps) {
   const ICON_SIZE = 48;
-  let backgroundColor = selected ? "border-purplish-blue" : "border-cool-gray";
+
+  let borderColor = selected ? "border-purplish-blue" : "border-cool-gray";
+  let backgroundColor = selected ? "bg-slate-100" : "bg-white";
 
   return (
     <div
-      className={`${backgroundColor} border-2 cursor-pointer rounded-xl border-solid p-4 w-44 flex gap-16 flex-col`}
+      className={`${borderColor} ${backgroundColor} border-2 cursor-pointer rounded-xl border-solid p-4 w-44 hover:border-purplish-blue flex gap-16 flex-col`}
       onClick={onClick}
     >
       <Image src={icon} width={ICON_SIZE} height={ICON_SIZE} alt={alt} />
@@ -36,7 +38,7 @@ export default function Plan({
           priceYear={priceYear}
           showMonthPrice={showMonthPrice}
         />
-        {showMonthPrice && (
+        {!showMonthPrice && (
           <span className="text-marine-blue">{monthsFree} months free</span>
         )}
       </div>

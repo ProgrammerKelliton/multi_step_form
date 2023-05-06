@@ -7,7 +7,7 @@ export default function Price({
   showMonthPrice,
 }: PriceProps) {
   let price = showMonthPrice ? priceMonth : priceYear;
-  let sufixTime = showMonthPrice ? "/yr" : "/mo";
+  let sufixTime = showMonthPrice ? "/mo" : "/yr";
 
   return (
     <span className="text-cool-gray">

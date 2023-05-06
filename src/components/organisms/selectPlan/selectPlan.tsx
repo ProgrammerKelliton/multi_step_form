@@ -16,7 +16,7 @@ export default function SelectPlan() {
     },
   } = useContext(GlobalContext);
 
-  const [showMonthPrice, setShowMonthPrice] = useState(false);
+  const [showMonthPrice, setShowMonthPrice] = useState(true);
 
   return (
     <div className="w-3/4 flex flex-col gap-8">
