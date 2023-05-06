@@ -35,7 +35,7 @@ export default function Navigation() {
   }
 
   return (
-    <div className="w-2/3 flex justify-between">
+    <div className="w-3/4 flex justify-between">
       <GoBack number={number} onClick={() => handlerGoBackOnClick()} />
       <NextStep onClick={() => handlerNextStepOnClick()} />
     </div>

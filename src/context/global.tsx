@@ -17,4 +17,8 @@ export const GlobalContext = createContext<GlobalContextState>({
     phoneNumber: "",
     setPhoneNumber: () => {},
   },
+  plan: {
+    planSelected: "Arcade",
+    setPlanSelected: () => {},
+  },
 });

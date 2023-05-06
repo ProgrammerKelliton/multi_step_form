@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { PlanType } from "./plan.types";
 
 export interface GlobalContextState {
   step: {
@@ -13,5 +14,10 @@ export interface GlobalContextState {
     setEmail: Dispatch<SetStateAction<string>>;
     phoneNumber: string;
     setPhoneNumber: Dispatch<SetStateAction<string>>;
+  };
+
+  plan: {
+    planSelected: PlanType;
+    setPlanSelected: Dispatch<SetStateAction<PlanType>>;
   };
 }

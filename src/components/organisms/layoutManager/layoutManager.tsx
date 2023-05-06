@@ -8,7 +8,7 @@ import LayoutContent from "./getContent";
 
 // Components
 import Header from "@/components/molecules/header/header";
-import Form from "../form/form";
+import ComponentByStep from "./componentByStep";
 
 // React
 import { useContext, useEffect, useState } from "react";
@@ -35,7 +35,7 @@ export default function LayoutManager() {
         subTitle={content?.subTitle || "loading"}
       />
 
-      <Form />
+      <ComponentByStep number={number} />
     </div>
   );
 }

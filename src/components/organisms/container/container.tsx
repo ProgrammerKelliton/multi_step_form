@@ -2,6 +2,7 @@
 
 // Types
 import { ContainerProps } from "@/types/container.types";
+import { PlanType } from "@/types/plan.types";
 
 // Global
 import { GlobalContext } from "@/context/global";
@@ -14,6 +15,9 @@ export default function Container({ children }: ContainerProps) {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [planSelected, setPlanSelected] = useState<PlanType>({
+    plan: "Arcade",
+  });
 
   return (
     <GlobalContext.Provider
@@ -29,6 +33,10 @@ export default function Container({ children }: ContainerProps) {
           setEmail,
           phoneNumber,
           setPhoneNumber,
+        },
+        plan: {
+          planSelected,
+          setPlanSelected,
         },
       }}
     >
