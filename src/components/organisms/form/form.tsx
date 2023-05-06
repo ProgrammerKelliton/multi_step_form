@@ -12,7 +12,7 @@ export default function Form() {
   const { user } = useContext(GlobalContext);
 
   return (
-    <form className="w-2/3 flex flex-col gap-6">
+    <form className="w-3/4 flex flex-col gap-6">
       <Input
         name="Name"
         onChange={({ target }) => target.value && user.setName(target.value)}

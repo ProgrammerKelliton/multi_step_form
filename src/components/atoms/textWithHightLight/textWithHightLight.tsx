@@ -1,3 +1,4 @@
+// Types
 import { TextWithHighLightProps } from "@/types/textWithHightLight.types";
 
 export default function TextWithHightLight({

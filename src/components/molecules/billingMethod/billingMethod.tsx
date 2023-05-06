@@ -1,5 +1,8 @@
+// Components
 import TextWithHightLight from "@/components/atoms/textWithHightLight/textWithHightLight";
 import Toggle from "@/components/atoms/toggle/toggle";
+
+// React
 import { useState } from "react";
 
 export default function BillingMethod({ onClick }: { onClick: () => void }) {
