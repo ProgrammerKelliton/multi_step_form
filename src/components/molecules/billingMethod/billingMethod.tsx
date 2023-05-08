@@ -2,12 +2,13 @@
 import TextWithHightLight from "@/components/atoms/textWithHightLight/textWithHightLight";
 import Toggle from "@/components/atoms/toggle/toggle";
 
-// React
-import { useState } from "react";
-
-export default function BillingMethod({ onClick }: { onClick: () => void }) {
-  const [monthlyIsSelected, setMonthlyIsSelected] = useState(true);
-
+export default function BillingMethod({
+  onClick,
+  monthlyIsSelected,
+}: {
+  onClick: () => void;
+  monthlyIsSelected: boolean;
+}) {
   return (
     <div className="bg-slate-100 p-4 rounded-xl flex justify-center items-center">
       <div className="flex gap-4">
@@ -21,8 +22,8 @@ export default function BillingMethod({ onClick }: { onClick: () => void }) {
         <Toggle
           onClick={() => {
             onClick();
-            setMonthlyIsSelected((prev) => !prev);
           }}
+          isChecked={monthlyIsSelected}
         />
 
         <TextWithHightLight

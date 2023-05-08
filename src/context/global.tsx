@@ -18,7 +18,9 @@ export const GlobalContext = createContext<GlobalContextState>({
     setPhoneNumber: () => {},
   },
   plan: {
-    planSelected: "Arcade",
+    planSelected: { plan: "Arcade" },
     setPlanSelected: () => {},
+    billingMethod: { method: "monthy" },
+    setBillingMethod: () => {},
   },
 });

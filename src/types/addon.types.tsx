@@ -3,4 +3,5 @@ export interface AddonProps {
   descrition: string;
   priceMonths: number;
   priceYear: number;
+  billingMethodIsMonthy?: boolean;
 }

@@ -2,7 +2,7 @@
 
 // Types
 import { ContainerProps } from "@/types/container.types";
-import { PlanType } from "@/types/plan.types";
+import { BillingMethod, PlanType } from "@/types/plan.types";
 
 // Global
 import { GlobalContext } from "@/context/global";
@@ -18,6 +18,11 @@ export default function Container({ children }: ContainerProps) {
   const [planSelected, setPlanSelected] = useState<PlanType>({
     plan: "Arcade",
   });
+  const [billingMethod, setBillingMethod] = useState<BillingMethod>({
+    method: "monthy",
+  });
+
+  console.log(billingMethod);
 
   return (
     <GlobalContext.Provider
@@ -37,6 +42,8 @@ export default function Container({ children }: ContainerProps) {
         plan: {
           planSelected,
           setPlanSelected,
+          billingMethod,
+          setBillingMethod,
         },
       }}
     >

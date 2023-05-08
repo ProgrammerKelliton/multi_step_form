@@ -1,5 +1,3 @@
-"use client";
-
 // Components
 import CheckMark from "@/components/atoms/checkmark/checkmark";
 
@@ -14,12 +12,13 @@ export default function Addon({
   name,
   priceMonths,
   priceYear,
+  billingMethodIsMonthy,
 }: AddonProps) {
   const [isSelect, setIsSelect] = useState(false);
 
-  let price = true ? priceMonths : priceYear;
+  let price = billingMethodIsMonthy ? priceMonths : priceYear;
   let borderColor = isSelect ? "border-purplish-blue" : "border-cool-gray";
-  let formatPrice = true ? `+$${price}/mo` : `+$${price}/yr`;
+  let formatPrice = billingMethodIsMonthy ? `+$${price}/mo` : `+$${price}/yr`;
   let backgroundColor = isSelect ? "bg-slate-50" : "bg-transparent";
 
   return (

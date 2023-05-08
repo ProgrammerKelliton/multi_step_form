@@ -4,7 +4,18 @@ export enum PlansTypes {
   "Pro",
 }
 
+export enum BillingMethods {
+  "monthy",
+  "yearly",
+}
+
+type billingMethod = keyof typeof BillingMethods;
+
 type planType = keyof typeof PlansTypes;
+
+export interface BillingMethod {
+  method: billingMethod;
+}
 
 export interface PlanType {
   plan: planType;

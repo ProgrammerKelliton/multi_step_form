@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { PlanType } from "./plan.types";
+import { BillingMethod, PlanType } from "./plan.types";
 
 export interface GlobalContextState {
   step: {
@@ -19,5 +19,7 @@ export interface GlobalContextState {
   plan: {
     planSelected: PlanType;
     setPlanSelected: Dispatch<SetStateAction<PlanType>>;
+    billingMethod: BillingMethod;
+    setBillingMethod: Dispatch<SetStateAction<BillingMethod>>;
   };
 }

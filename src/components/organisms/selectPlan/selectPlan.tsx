@@ -5,18 +5,20 @@ import Plan from "@/components/molecules/plan/plan";
 // Context
 import { GlobalContext } from "@/context/global";
 
+import handlerBillingMethod from "@/utils/handlerBillingMethod";
+
 // React
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function SelectPlan() {
   const {
     plan: {
       planSelected: { plan },
       setPlanSelected,
+      billingMethod,
+      setBillingMethod,
     },
   } = useContext(GlobalContext);
-
-  const [showMonthPrice, setShowMonthPrice] = useState(true);
 
   return (
     <div className="w-3/4 flex flex-col gap-8">
@@ -30,7 +32,7 @@ export default function SelectPlan() {
           priceYear={90}
           selected={plan === "Arcade"}
           onClick={() => setPlanSelected({ plan: "Arcade" })}
-          showMonthPrice={showMonthPrice}
+          showMonthPrice={billingMethod.method === "monthy"}
         />
 
         <Plan
@@ -42,7 +44,7 @@ export default function SelectPlan() {
           priceYear={150}
           selected={plan === "Advanced"}
           onClick={() => setPlanSelected({ plan: "Advanced" })}
-          showMonthPrice={showMonthPrice}
+          showMonthPrice={billingMethod.method === "monthy"}
         />
 
         <Plan
@@ -54,11 +56,18 @@ export default function SelectPlan() {
           priceYear={150}
           selected={plan === "Pro"}
           onClick={() => setPlanSelected({ plan: "Pro" })}
-          showMonthPrice={showMonthPrice}
+          showMonthPrice={billingMethod.method === "monthy"}
         />
       </div>
 
-      <BillingMethod onClick={() => setShowMonthPrice((prev) => !prev)} />
+      <BillingMethod
+        onClick={() => {
+          setBillingMethod({
+            method: handlerBillingMethod(billingMethod).method,
+          });
+        }}
+        monthlyIsSelected={billingMethod.method === "yearly"}
+      />
     </div>
   );
 }

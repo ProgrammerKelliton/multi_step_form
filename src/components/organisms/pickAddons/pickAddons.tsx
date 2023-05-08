@@ -1,7 +1,15 @@
 // Components
 import Addon from "@/components/molecules/addon/addon";
+import { GlobalContext } from "@/context/global";
+import { useContext } from "react";
 
 export default function PickAddons() {
+  const {
+    plan: {
+      billingMethod: { method },
+    },
+  } = useContext(GlobalContext);
+
   return (
     <div className="w-3/4 flex flex-col gap-6">
       <Addon
@@ -9,6 +17,7 @@ export default function PickAddons() {
         descrition="Access to multiplayer games"
         priceMonths={1}
         priceYear={10}
+        billingMethodIsMonthy={method === "monthy"}
       />
 
       <Addon
@@ -16,6 +25,7 @@ export default function PickAddons() {
         descrition="Extra 1TB of cloud save"
         priceMonths={2}
         priceYear={20}
+        billingMethodIsMonthy={method === "monthy"}
       />
 
       <Addon
@@ -23,6 +33,7 @@ export default function PickAddons() {
         descrition="Custom theme on your profile"
         priceMonths={2}
         priceYear={20}
+        billingMethodIsMonthy={method === "monthy"}
       />
     </div>
   );
