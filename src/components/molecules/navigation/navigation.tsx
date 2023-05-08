@@ -8,11 +8,14 @@ import GoBack from "@/components/atoms/goBack/goBack";
 import { GlobalContext } from "@/context/global";
 
 // React
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export default function Navigation() {
   const {
     step: { number, setStep },
+    plan: {
+      planSelected: { price },
+    },
   } = useContext(GlobalContext);
 
   // todo: add reducer

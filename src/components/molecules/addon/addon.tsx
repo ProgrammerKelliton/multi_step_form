@@ -1,12 +1,13 @@
 // Components
 import CheckMark from "@/components/atoms/checkmark/checkmark";
 import Text from "@/components/atoms/text/text";
+import { GlobalContext } from "@/context/global";
 
 // Types
 import { AddonProps } from "@/types/addon.types";
 
 // React
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function Addon({
   descrition,
@@ -14,8 +15,14 @@ export default function Addon({
   priceMonths,
   priceYear,
   billingMethodIsMonthy,
+  onClick,
+  select,
 }: AddonProps) {
-  const [isSelect, setIsSelect] = useState(false);
+  const [isSelect, setIsSelect] = useState<boolean>(select || false);
+
+  useEffect(() => {
+    if (select) setIsSelect(select);
+  }, [select]);
 
   let price = billingMethodIsMonthy ? priceMonths : priceYear;
   let borderColor = isSelect ? "border-purplish-blue" : "border-cool-gray";
@@ -27,7 +34,13 @@ export default function Addon({
       className={`py-4 px-8 border rounded-xl ${borderColor} ${backgroundColor} w-full flex justify-between items-center`}
     >
       <div className="flex gap-4 items-center">
-        <CheckMark onClick={() => setIsSelect((prev) => !prev)} />
+        <CheckMark
+          onClick={() => {
+            setIsSelect((prev) => !prev);
+            onClick();
+          }}
+          forceChecked={select}
+        />
 
         <div className="flex flex-col">
           <Text name={name} />

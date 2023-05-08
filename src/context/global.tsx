@@ -23,4 +23,8 @@ export const GlobalContext = createContext<GlobalContextState>({
     billingMethod: { method: "monthy" },
     setBillingMethod: () => {},
   },
+  addons: {
+    addonsSelected: [],
+    setAddonsSelected: () => {},
+  },
 });

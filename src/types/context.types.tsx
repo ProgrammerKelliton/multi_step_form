@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { BillingMethod, PlanType } from "./plan.types";
+import { Addons } from "./addon.types";
 
 export interface GlobalContextState {
   step: {
@@ -21,5 +22,10 @@ export interface GlobalContextState {
     setPlanSelected: Dispatch<SetStateAction<PlanType>>;
     billingMethod: BillingMethod;
     setBillingMethod: Dispatch<SetStateAction<BillingMethod>>;
+  };
+
+  addons: {
+    addonsSelected: Addons[] | [];
+    setAddonsSelected: Dispatch<SetStateAction<Addons[] | []>>;
   };
 }

@@ -10,6 +10,9 @@ import { GlobalContext } from "@/context/global";
 // React
 import { useState } from "react";
 
+import { Addons } from "@/types/addon.types";
+import getPricesPlans from "@/utils/getPricesPlans";
+
 export default function Container({ children }: ContainerProps) {
   const [step, setStep] = useState<number>(1);
   const [name, setName] = useState<string>("");
@@ -17,12 +20,13 @@ export default function Container({ children }: ContainerProps) {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [planSelected, setPlanSelected] = useState<PlanType>({
     plan: "Arcade",
+    price: getPricesPlans({ plan: "Arcade" }).monthly,
   });
+  const [addonsSelected, setAddonsSelected] = useState<Addons[] | []>([]);
+
   const [billingMethod, setBillingMethod] = useState<BillingMethod>({
     method: "monthy",
   });
-
-  console.log(billingMethod);
 
   return (
     <GlobalContext.Provider
@@ -44,6 +48,10 @@ export default function Container({ children }: ContainerProps) {
           setPlanSelected,
           billingMethod,
           setBillingMethod,
+        },
+        addons: {
+          addonsSelected,
+          setAddonsSelected,
         },
       }}
     >

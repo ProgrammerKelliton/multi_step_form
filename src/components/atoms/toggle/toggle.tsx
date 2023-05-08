@@ -7,6 +7,7 @@ export default function Toggle({
 }) {
   return (
     <input
+      readOnly
       checked={isChecked}
       onClick={onClick}
       type="checkbox"

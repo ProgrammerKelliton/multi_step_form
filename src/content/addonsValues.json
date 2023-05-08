@@ -1,0 +1,14 @@
+{
+  "Online Service": {
+    "monthly": 1,
+    "yearly": 10
+  },
+  "Larger storage": {
+    "monthly": 2,
+    "yearly": 20
+  },
+  "Customizable profile": {
+    "monthly": 2,
+    "yearly": 20
+  }
+}
