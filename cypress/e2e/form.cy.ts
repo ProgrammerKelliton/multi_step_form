@@ -1,27 +1,20 @@
-describe("Form", () => {
+Cypress.Commands.add("typeForm", ({ name, email, phoneNumber }) => {
   // Variables
   const INPUT_NAME = ":nth-child(1) > input";
   const INPUT_EMAIL = ":nth-child(2) > input";
   const INPUT_PHONE_NUMBER = ":nth-child(3) > input";
-  const STEP_HIGHTLIGHT = ".text-strawberry-red";
 
-  // Functions
-  function VerifyIfFormIsWorking() {
-    // Name input
-    cy.get(INPUT_NAME).type("example");
+  cy.get(INPUT_NAME).type(name);
+  cy.get(INPUT_NAME).should("have.value", name);
 
-    // Email input with error
-    cy.get(INPUT_EMAIL).type("name example here");
-    cy.get(STEP_HIGHTLIGHT);
+  cy.get(INPUT_EMAIL).type(email);
+  cy.get(INPUT_EMAIL).should("have.value", email);
 
-    // Email input without error
-    cy.get(INPUT_EMAIL).clear();
-    cy.get(INPUT_EMAIL).type("example@gmail.com");
+  cy.get(INPUT_PHONE_NUMBER).type(phoneNumber);
+  cy.get(INPUT_PHONE_NUMBER).should("have.value", phoneNumber);
+});
 
-    // Phone number input
-    cy.get(INPUT_PHONE_NUMBER).type("123456789");
-  }
-
+describe("Form", () => {
   context("Testing form", () => {
     beforeEach(() => {
       cy.viewport(1280 * 2, 720 * 2);
@@ -29,7 +22,11 @@ describe("Form", () => {
     });
 
     it("should verify if form is working", () => {
-      VerifyIfFormIsWorking();
+      cy.typeForm({
+        name: "example",
+        email: "example@gmail.com",
+        phoneNumber: 3213463546,
+      });
     });
   });
 });

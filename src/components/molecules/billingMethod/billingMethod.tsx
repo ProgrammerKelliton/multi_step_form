@@ -23,7 +23,8 @@ export default function BillingMethod({
           onClick={() => {
             onClick();
           }}
-          isChecked={monthlyIsSelected}
+          // ! if is checked then yearly method is selected
+          isChecked={!monthlyIsSelected}
         />
 
         <TextWithHightLight

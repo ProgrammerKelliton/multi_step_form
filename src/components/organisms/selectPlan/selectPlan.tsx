@@ -5,10 +5,11 @@ import Plan from "@/components/molecules/plan/plan";
 // Context
 import { GlobalContext } from "@/context/global";
 
+// Utils
 import handlerBillingMethod from "@/utils/handlerBillingMethod";
 
 // React
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function SelectPlan() {
   const {
@@ -19,6 +20,15 @@ export default function SelectPlan() {
       setBillingMethod,
     },
   } = useContext(GlobalContext);
+
+  const [billingMethodIsMonthy, setBillingMethodIsMonthy] = useState(
+    billingMethod.method === "monthy"
+  );
+
+  useEffect(
+    () => setBillingMethodIsMonthy(billingMethod.method === "monthy"),
+    [billingMethod]
+  );
 
   return (
     <div className="w-3/4 flex flex-col gap-8">
@@ -32,7 +42,7 @@ export default function SelectPlan() {
           priceYear={90}
           selected={plan === "Arcade"}
           onClick={() => setPlanSelected({ plan: "Arcade" })}
-          showMonthPrice={billingMethod.method === "monthy"}
+          showMonthPrice={billingMethodIsMonthy}
         />
 
         <Plan
@@ -44,7 +54,7 @@ export default function SelectPlan() {
           priceYear={150}
           selected={plan === "Advanced"}
           onClick={() => setPlanSelected({ plan: "Advanced" })}
-          showMonthPrice={billingMethod.method === "monthy"}
+          showMonthPrice={billingMethodIsMonthy}
         />
 
         <Plan
@@ -56,7 +66,7 @@ export default function SelectPlan() {
           priceYear={150}
           selected={plan === "Pro"}
           onClick={() => setPlanSelected({ plan: "Pro" })}
-          showMonthPrice={billingMethod.method === "monthy"}
+          showMonthPrice={billingMethodIsMonthy}
         />
       </div>
 
@@ -66,7 +76,7 @@ export default function SelectPlan() {
             method: handlerBillingMethod(billingMethod).method,
           });
         }}
-        monthlyIsSelected={billingMethod.method === "yearly"}
+        monthlyIsSelected={billingMethodIsMonthy}
       />
     </div>
   );

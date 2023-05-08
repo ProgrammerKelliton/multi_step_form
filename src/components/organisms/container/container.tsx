@@ -1,8 +1,8 @@
 "use client";
 
 // Types
-import { ContainerProps } from "@/types/container.types";
 import { BillingMethod, PlanType } from "@/types/plan.types";
+import { ContainerProps } from "@/types/container.types";
 
 // Global
 import { GlobalContext } from "@/context/global";

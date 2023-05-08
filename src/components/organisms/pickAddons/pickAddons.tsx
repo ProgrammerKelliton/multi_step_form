@@ -1,6 +1,10 @@
 // Components
 import Addon from "@/components/molecules/addon/addon";
+
+// Context
 import { GlobalContext } from "@/context/global";
+
+// React
 import { useContext } from "react";
 
 export default function PickAddons() {
