@@ -1,4 +1,4 @@
-context("Form", () => {
+describe("Form", () => {
   // Variables
   const INPUT_NAME = ":nth-child(1) > input";
   const INPUT_EMAIL = ":nth-child(2) > input";
@@ -22,7 +22,7 @@ context("Form", () => {
     cy.get(INPUT_PHONE_NUMBER).type("123456789");
   }
 
-  describe("Testing form", () => {
+  context("Testing form", () => {
     beforeEach(() => {
       cy.viewport(1280 * 2, 720 * 2);
       cy.visit("./");

@@ -1,4 +1,4 @@
-context("Select plan", () => {
+describe("Select plan", () => {
   // Variables
   const NEXT_STEP_BUTTON = "Next step";
   const TOOGLE_BUTTON = ".appearance-none";
@@ -10,7 +10,7 @@ context("Select plan", () => {
     cy.contains("Pro").click();
   }
 
-  describe("Testing select plan", () => {
+  context("Testing select plan", () => {
     beforeEach(() => {
       cy.viewport(1280 * 2, 720 * 2);
       cy.visit("./");

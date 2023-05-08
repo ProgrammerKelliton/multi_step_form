@@ -1,4 +1,4 @@
-context("Navigation", () => {
+describe("Navigation", () => {
   // Variables
   const NEXT_STEP_BUTTON = "Next step";
   const GO_BACK_BUTTON = "Go Back";
@@ -25,7 +25,7 @@ context("Navigation", () => {
     }
   }
 
-  describe("Testing navigation", () => {
+  context("Testing navigation", () => {
     beforeEach(() => {
       cy.viewport(1280 * 2, 720 * 2);
       cy.visit("./");
