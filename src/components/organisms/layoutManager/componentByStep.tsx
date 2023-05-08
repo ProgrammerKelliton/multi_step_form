@@ -4,6 +4,7 @@ import { NumberOfStep } from "@/types/step.types";
 // Components
 import PickAddons from "../pickAddons/pickAddons";
 import SelectPlan from "../selectPlan/selectPlan";
+import Summary from "../summary/summary";
 import Form from "../form/form";
 
 export default function ComponentByStep({ number }: NumberOfStep) {
@@ -14,6 +15,8 @@ export default function ComponentByStep({ number }: NumberOfStep) {
       return <SelectPlan />;
     case 3:
       return <PickAddons />;
+    case 4:
+      return <Summary />;
     default:
       return <></>;
   }

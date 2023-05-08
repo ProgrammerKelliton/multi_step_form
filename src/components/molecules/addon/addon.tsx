@@ -1,5 +1,6 @@
 // Components
 import CheckMark from "@/components/atoms/checkmark/checkmark";
+import Text from "@/components/atoms/text/text";
 
 // Types
 import { AddonProps } from "@/types/addon.types";
@@ -29,7 +30,7 @@ export default function Addon({
         <CheckMark onClick={() => setIsSelect((prev) => !prev)} />
 
         <div className="flex flex-col">
-          <span className="font-medium text-marine-blue">{name}</span>
+          <Text name={name} />
           <span className="text-cool-gray">{descrition}</span>
         </div>
       </div>
