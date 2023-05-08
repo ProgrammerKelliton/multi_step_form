@@ -1,4 +1,5 @@
-import SummaryAddons from "@/components/molecules/summaryAddons";
+// Components
+import SummaryAddons from "@/components/molecules/summaryAddons/summaryAddons";
 import SummaryPlan from "@/components/molecules/summaryPlan/summaryPlan";
 
 export default function Summary() {

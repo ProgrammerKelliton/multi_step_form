@@ -1,3 +1,4 @@
+// Components
 import Text from "@/components/atoms/text/text";
 
 export default function SummaryPlan() {

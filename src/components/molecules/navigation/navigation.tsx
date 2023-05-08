@@ -34,10 +34,33 @@ export default function Navigation() {
     });
   }
 
+  function handlerConfirm() {
+    console.log("Confirmado");
+  }
+
+  if (number === 4) {
+    return (
+      <div className="w-3/4 flex justify-between">
+        <GoBack number={number} onClick={() => handlerGoBackOnClick()} />
+        <NextStep
+          onClick={() => handlerConfirm()}
+          name="Confirm"
+          backgroundColor="bg-purplish-blue"
+          hoverBackgroundColor="bg-blue-900"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="w-3/4 flex justify-between">
       <GoBack number={number} onClick={() => handlerGoBackOnClick()} />
-      <NextStep onClick={() => handlerNextStepOnClick()} />
+      <NextStep
+        onClick={() => handlerNextStepOnClick()}
+        name="Next step"
+        backgroundColor="bg-marine-blue"
+        hoverBackgroundColor="bg-blue-900"
+      />
     </div>
   );
 }

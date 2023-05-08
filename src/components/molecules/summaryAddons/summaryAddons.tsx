@@ -1,4 +1,5 @@
-import AddonsInfo from "../atoms/addonsInfo/addonsInfo";
+// Components
+import AddonsInfo from "../../atoms/addonsInfo/addonsInfo";
 
 export default function SummaryAddons() {
   return (

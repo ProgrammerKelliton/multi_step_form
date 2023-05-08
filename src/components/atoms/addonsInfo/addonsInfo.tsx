@@ -1,3 +1,4 @@
+// Components
 import Text from "../text/text";
 
 export default function AddonsInfo({
