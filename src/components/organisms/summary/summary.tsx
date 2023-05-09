@@ -1,12 +1,20 @@
 // Components
 import SummaryAddons from "@/components/molecules/summaryAddons/summaryAddons";
 import SummaryPlan from "@/components/molecules/summaryPlan/summaryPlan";
+
+// Context
 import { GlobalContext } from "@/context/global";
+
+// React
 import { useContext } from "react";
+
+// Logic
+import { SumTotalValue } from "./summaryLogic";
 
 export default function Summary() {
   const {
     addons: { addonsSelected },
+    plan: { planSelected },
   } = useContext(GlobalContext);
 
   return (
@@ -23,7 +31,9 @@ export default function Summary() {
 
       <div className="flex justify-between px-8">
         <span className="text-cool-gray">Total (per year)</span>
-        <span className="text-purplish-blue font-bold text-xl">$120/yr</span>
+        <span className="text-purplish-blue font-bold text-xl">
+          ${SumTotalValue({ addonsSelected, planSelected })}/yr
+        </span>
       </div>
     </section>
   );

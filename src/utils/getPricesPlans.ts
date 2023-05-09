@@ -1,15 +1,13 @@
 import { PlanType } from "@/types/plan.types";
-import { Advanced } from "../content/plansValues.json";
-import { Arcade } from "../content/plansValues.json";
-import { Pro } from "../content/plansValues.json";
+import content from "../content/plansValues.json";
 
 export default function getPricesPlans({ plan }: PlanType) {
   switch (plan) {
     case "Arcade":
-      return Arcade;
+      return content.Arcade;
     case "Advanced":
-      return Advanced;
+      return content.Advanced;
     case "Pro":
-      return Pro;
+      return content.Pro;
   }
 }

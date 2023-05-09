@@ -1,7 +1,3 @@
-// ! fix: Quando seleciona os addons e depois volta e muda para pagamento ao ano...
-// ! os valores dos addons não muda
-// todo: É preciso somar o valor total do valor a ser pago
-
 // Components
 import Addon from "@/components/molecules/addon/addon";
 
