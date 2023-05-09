@@ -6,8 +6,11 @@ export enum AddonsTypes {
 
 type addonsType = keyof typeof AddonsTypes;
 
-export interface Addons {
+export interface AddonType {
   type?: addonsType;
+}
+
+export interface Addons extends AddonType {
   price?: number;
 }
 

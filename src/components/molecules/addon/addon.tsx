@@ -1,13 +1,12 @@
 // Components
 import CheckMark from "@/components/atoms/checkmark/checkmark";
 import Text from "@/components/atoms/text/text";
-import { GlobalContext } from "@/context/global";
 
 // Types
 import { AddonProps } from "@/types/addon.types";
 
 // React
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Addon({
   descrition,
