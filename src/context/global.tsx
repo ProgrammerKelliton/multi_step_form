@@ -1,5 +1,5 @@
 // Types
-import { GlobalContextState } from "@/types/context.types";
+import { GlobalContextState } from "@/types/context/context.types";
 
 // React
 import { createContext } from "react";
