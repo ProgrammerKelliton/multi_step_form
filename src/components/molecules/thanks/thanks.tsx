@@ -1,4 +1,7 @@
+// Components
 import Text from "@/components/atoms/text/text";
+
+// Next
 import Image from "next/image";
 
 export default function Thanks() {

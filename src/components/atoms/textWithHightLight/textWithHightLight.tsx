@@ -1,5 +1,5 @@
 // Types
-import { TextWithHighLightProps } from "@/types/textWithHightLight.types";
+import { TextWithHighLightProps } from "@/types/components/atoms/textWithHightLight.types";
 
 export default function TextWithHightLight({
   name,

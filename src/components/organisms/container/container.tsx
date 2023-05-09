@@ -1,7 +1,10 @@
 "use client";
 
 // Types
-import { BillingMethod, PlanType } from "@/types/plan.types";
+import {
+  BillingMethod,
+  PlanType,
+} from "@/types/components/molecules/plan.types";
 import { ContainerProps } from "@/types/container.types";
 import { Addons } from "@/types/addon.types";
 
@@ -15,16 +18,16 @@ import { useState } from "react";
 import getPricesPlans from "@/utils/getPricesPlans";
 
 export default function Container({ children }: ContainerProps) {
-  const [step, setStep] = useState<number>(1);
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  const [addonsSelected, setAddonsSelected] = useState<Addons[] | []>([]);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [step, setStep] = useState<number>(1);
+
   const [planSelected, setPlanSelected] = useState<PlanType>({
     plan: "Arcade",
-    price: getPricesPlans({ plan: "Arcade" }).monthly,
+    price: getPricesPlans({ plan: "Arcade" })?.monthly,
   });
-  const [addonsSelected, setAddonsSelected] = useState<Addons[] | []>([]);
-
   const [billingMethod, setBillingMethod] = useState<BillingMethod>({
     method: "monthy",
   });

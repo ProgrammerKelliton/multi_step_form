@@ -1,10 +1,7 @@
-export default function Toggle({
-  onClick,
-  isChecked,
-}: {
-  onClick: () => void;
-  isChecked: boolean;
-}) {
+// Types
+import { ToggleProps } from "@/types/components/atoms/toggle.types";
+
+export default function Toggle({ onClick, isChecked }: ToggleProps) {
   return (
     <input
       readOnly

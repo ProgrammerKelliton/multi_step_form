@@ -12,7 +12,7 @@ import getPricesPlans from "@/utils/getPricesPlans";
 import { useContext, useEffect, useState } from "react";
 
 // Logic
-import { handlerOnClickBillingMethod } from "./selectPlanLogic";
+import { handlerOnClick, handlerOnClickBillingMethod } from "./selectPlanLogic";
 
 export default function SelectPlan() {
   const {
@@ -42,15 +42,14 @@ export default function SelectPlan() {
           alt="icon arcade"
           name="Arcade"
           monthsFree={2}
-          priceMonth={getPricesPlans({ plan: "Arcade" }).monthly}
-          priceYear={getPricesPlans({ plan: "Arcade" }).yearly}
+          priceMonth={getPricesPlans({ plan: "Arcade" })?.monthly || 0}
+          priceYear={getPricesPlans({ plan: "Arcade" })?.yearly || 0}
           selected={plan === "Arcade"}
           onClick={() =>
-            setPlanSelected({
-              plan: "Arcade",
-              price: billingMethodIsMonthy
-                ? getPricesPlans({ plan: "Arcade" }).monthly
-                : getPricesPlans({ plan: "Arcade" }).yearly,
+            handlerOnClick({
+              plan: { plan: "Arcade" },
+              billingMethodIsMonthy,
+              setPlanSelected,
             })
           }
           showMonthPrice={billingMethodIsMonthy}
@@ -61,15 +60,14 @@ export default function SelectPlan() {
           alt="icon advanced"
           name="Advanced"
           monthsFree={2}
-          priceMonth={getPricesPlans({ plan: "Advanced" }).monthly}
-          priceYear={getPricesPlans({ plan: "Advanced" }).yearly}
+          priceMonth={getPricesPlans({ plan: "Advanced" })?.monthly || 0}
+          priceYear={getPricesPlans({ plan: "Advanced" })?.yearly || 0}
           selected={plan === "Advanced"}
           onClick={() =>
-            setPlanSelected({
-              plan: "Advanced",
-              price: billingMethodIsMonthy
-                ? getPricesPlans({ plan: "Advanced" }).monthly
-                : getPricesPlans({ plan: "Advanced" }).yearly,
+            handlerOnClick({
+              plan: { plan: "Advanced" },
+              billingMethodIsMonthy,
+              setPlanSelected,
             })
           }
           showMonthPrice={billingMethodIsMonthy}
@@ -80,15 +78,14 @@ export default function SelectPlan() {
           alt="icon pro"
           name="Pro"
           monthsFree={2}
-          priceMonth={getPricesPlans({ plan: "Pro" }).monthly}
-          priceYear={getPricesPlans({ plan: "Pro" }).yearly}
+          priceMonth={getPricesPlans({ plan: "Pro" })?.monthly || 0}
+          priceYear={getPricesPlans({ plan: "Pro" })?.yearly || 0}
           selected={plan === "Pro"}
           onClick={() =>
-            setPlanSelected({
-              plan: "Pro",
-              price: billingMethodIsMonthy
-                ? getPricesPlans({ plan: "Pro" }).monthly
-                : getPricesPlans({ plan: "Pro" }).yearly,
+            handlerOnClick({
+              plan: { plan: "Pro" },
+              billingMethodIsMonthy,
+              setPlanSelected,
             })
           }
           showMonthPrice={billingMethodIsMonthy}

@@ -8,7 +8,10 @@ import GoBack from "@/components/atoms/goBack/goBack";
 import { GlobalContext } from "@/context/global";
 
 // React
-import { useContext, useState } from "react";
+import { useContext } from "react";
+
+// Logic
+import { Navigate } from "./navigationLogic";
 
 export default function Navigation() {
   const {
@@ -17,29 +20,13 @@ export default function Navigation() {
 
   const CONFIRM_COMPONENT_NUMBER = 5;
 
-  // todo: add reducer
-  function handlerGoBackOnClick() {
-    setStep((prev) => {
-      if (prev > 1) {
-        return prev - 1;
-      }
-      return prev;
-    });
-  }
-
-  function handlerNextStepOnClick() {
-    setStep((prev) => {
-      if (prev !== 4) {
-        return prev + 1;
-      }
-      return prev;
-    });
-  }
-
   if (number === 4) {
     return (
       <div className="w-3/4 flex justify-between">
-        <GoBack number={number} onClick={() => handlerGoBackOnClick()} />
+        <GoBack
+          number={number}
+          onClick={() => Navigate({ action: "back", setStep })}
+        />
         <NextStep
           onClick={() => setStep(CONFIRM_COMPONENT_NUMBER)}
           name="Confirm"
@@ -53,9 +40,12 @@ export default function Navigation() {
 
   return (
     <div className="w-3/4 flex justify-between">
-      <GoBack number={number} onClick={() => handlerGoBackOnClick()} />
+      <GoBack
+        number={number}
+        onClick={() => Navigate({ action: "back", setStep })}
+      />
       <NextStep
-        onClick={() => handlerNextStepOnClick()}
+        onClick={() => Navigate({ action: "next", setStep })}
         name="Next step"
         backgroundColor="bg-marine-blue"
         hoverBackgroundColor="bg-blue-900"

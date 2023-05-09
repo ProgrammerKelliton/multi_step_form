@@ -1,5 +1,5 @@
 // Types
-import { GoBackProps } from "@/types/goBack.types";
+import { GoBackProps } from "@/types/components/atoms/goBack.types";
 
 export default function GoBack({ number, onClick }: GoBackProps) {
   if (number === 1) return <span></span>;

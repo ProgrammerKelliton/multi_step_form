@@ -1,7 +1,7 @@
 "use client";
 
 // Types
-import { HeaderProps } from "@/types/header.types";
+import { HeaderProps } from "@/types/components/molecules/header.types";
 
 // Logic scripts
 import LayoutContent from "./getContent";

@@ -2,7 +2,7 @@
 import StepNumber from "@/components/atoms/stepNumber/stepNumber";
 
 // Types
-import { StepProps } from "@/types/step.types";
+import { StepProps } from "@/types/components/atoms/step.types";
 
 export default function Step({ number, name, select }: StepProps) {
   return (

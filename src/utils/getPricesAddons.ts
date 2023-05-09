@@ -1,4 +1,7 @@
-import { Addons } from "@/types/addon.types";
+// Types
+import { Addons } from "@/types/components/molecules/addon.types";
+
+// Json
 import content from "../content/addonsValues.json";
 
 export default function getPricesAddons({ type }: Addons) {

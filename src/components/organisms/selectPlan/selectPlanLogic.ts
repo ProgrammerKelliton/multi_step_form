@@ -4,8 +4,8 @@ import {
   changePriceAddonsProps,
   changePricePlanProps,
   handlerOnClickBillingMethodProps,
-} from "@/types/selectPlanLogicLogic.types";
-
+  handlerOnClickProps,
+} from "@/types/components/organisms/selectPlanLogic.types";
 import { Addons } from "@/types/addon.types";
 
 // Utils
@@ -14,9 +14,9 @@ import getPricesAddons from "@/utils/getPricesAddons";
 import getPricesPlans from "@/utils/getPricesPlans";
 
 function changePricePlan({ method, plan: { plan } }: changePricePlanProps) {
-  if (method === "monthy") return getPricesPlans({ plan }).monthly;
+  if (method === "monthy") return getPricesPlans({ plan })?.monthly;
 
-  return getPricesPlans({ plan }).yearly;
+  return getPricesPlans({ plan })?.yearly;
 }
 
 function changePriceAddons({ method, addon }: changePriceAddonsProps) {
@@ -65,4 +65,22 @@ function handlerOnClickBillingMethod({
   setAddonsSelected(changeAddonsSelected({ addonsSelected, method }));
 }
 
-export { handlerOnClickBillingMethod, changePricePlan, changePriceAddons };
+function handlerOnClick({
+  plan: { plan },
+  setPlanSelected,
+  billingMethodIsMonthy,
+}: handlerOnClickProps) {
+  setPlanSelected({
+    plan,
+    price: billingMethodIsMonthy
+      ? getPricesPlans({ plan })?.monthly || 0
+      : getPricesPlans({ plan })?.yearly || 0,
+  });
+}
+
+export {
+  handlerOnClickBillingMethod,
+  changePricePlan,
+  changePriceAddons,
+  handlerOnClick,
+};

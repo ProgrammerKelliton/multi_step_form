@@ -1,11 +1,14 @@
 // Types
-import { InputProps, handlerOnChangeEventProps } from "@/types/input.types";
+import { InputProps } from "@/types/components/molecules/input.types";
 
 // Compoenents
 import ErrorMessageLabel from "@/components/atoms/errorMessageLabel/errorMessageLabel";
 
 // React
 import { useEffect, useState } from "react";
+
+// Logic
+import { handlerOnChangeEvent } from "./inputLogic";
 
 export default function Input({
   name,
@@ -16,20 +19,6 @@ export default function Input({
 }: InputProps) {
   const [messageError, setMessageError] = useState<string>("");
   const [inputColorError, setInputColorError] = useState<string>("");
-
-  function handlerOnChangeEvent({
-    onChange,
-    event,
-  }: handlerOnChangeEventProps) {
-    try {
-      setMessageError("");
-      return onChange(event);
-    } catch (error) {
-      const formatError = String(error).replace("Error: ", "");
-
-      setMessageError(formatError);
-    }
-  }
 
   useEffect(() => {
     if (messageError !== "") setInputColorError("focus:outline-strawberry-red");
@@ -49,7 +38,7 @@ export default function Input({
         type={type}
         placeholder={placeholder}
         onChange={(event) =>
-          onChange && handlerOnChangeEvent({ onChange, event })
+          onChange && handlerOnChangeEvent({ onChange, event, setMessageError })
         }
         required={required}
       />

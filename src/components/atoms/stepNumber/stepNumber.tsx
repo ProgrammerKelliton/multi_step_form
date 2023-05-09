@@ -1,5 +1,5 @@
 // Types
-import { StepNumberProps } from "@/types/step.types";
+import { StepNumberProps } from "@/types/components/atoms/step.types";
 
 export default function StepNumber({ number, select }: StepNumberProps) {
   const isSelect = select ? "bg-light-blue" : "border-white border text-white";

@@ -1,5 +1,5 @@
 // Types
-import { PlanProps } from "@/types/plan.types";
+import { PlanProps } from "@/types/components/molecules/plan.types";
 
 // Components
 import Price from "@/components/atoms/price/price";

@@ -6,6 +6,8 @@ import UseVerifyEmail from "@/hooks/useVerifyEmail";
 
 // Context
 import { GlobalContext } from "@/context/global";
+
+// React
 import { useContext } from "react";
 
 export default function Form() {

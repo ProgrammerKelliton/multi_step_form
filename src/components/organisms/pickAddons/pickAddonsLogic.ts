@@ -7,6 +7,8 @@ import {
   handlerAddAndRemoveAddonsProps,
   isSelectedProps,
 } from "@/types/pickAddonsLogic.types";
+
+// Utils
 import getPricesAddons from "@/utils/getPricesAddons";
 
 function RemoveAddon({ addonsSelected, type }: RemoveAddonProps) {
@@ -36,12 +38,8 @@ function isSelected({ type, addonsSelected }: isSelectedProps) {
 }
 
 function getPrice({ type, method }: getPriceProps) {
-  if (method === "monthy") {
-    return getPricesAddons({ type })?.monthly;
-  }
-  if (method === "yearly") {
-    return getPricesAddons({ type })?.yearly;
-  }
+  if (method === "monthy") return getPricesAddons({ type })?.monthly;
+  if (method === "yearly") return getPricesAddons({ type })?.yearly;
 }
 
 export { handlerAddAndRemoveAddons, isSelected, RemoveAddon, getPrice };

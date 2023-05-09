@@ -1,15 +1,10 @@
 // Components
 import Text from "../text/text";
 
-export default function AddonsInfo({
-  name,
-  price,
-  prefix,
-}: {
-  name: string;
-  price: number;
-  prefix: string;
-}) {
+// Types
+import { AddonsInfoProps } from "@/types/components/atoms/addonsInfo.types";
+
+export default function AddonsInfo({ name, price, prefix }: AddonsInfoProps) {
   return (
     <div className="flex justify-between w-full">
       <span className="text-cool-gray">{name}</span>

@@ -2,13 +2,13 @@
 import TextWithHightLight from "@/components/atoms/textWithHightLight/textWithHightLight";
 import Toggle from "@/components/atoms/toggle/toggle";
 
+// Types
+import { BillingMethodProps } from "@/types/components/molecules/billingMethod.types";
+
 export default function BillingMethod({
   onClick,
   monthlyIsSelected,
-}: {
-  onClick: () => void;
-  monthlyIsSelected: boolean;
-}) {
+}: BillingMethodProps) {
   return (
     <div className="bg-slate-100 p-4 rounded-xl flex justify-center items-center">
       <div className="flex gap-4">

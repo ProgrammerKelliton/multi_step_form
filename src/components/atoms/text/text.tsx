@@ -1,12 +1,7 @@
-export default function Text({
-  name,
-  className,
-  fontWeight,
-}: {
-  name: string;
-  className?: string;
-  fontWeight?: string;
-}) {
+// Types
+import { TextProps } from "@/types/components/atoms/text.types";
+
+export default function Text({ name, className, fontWeight }: TextProps) {
   const font = fontWeight ? fontWeight : "font-medium";
 
   return (

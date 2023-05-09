@@ -1,4 +1,10 @@
-import { ChangeEvent, HTMLInputTypeAttribute } from "react";
+// React
+import {
+  ChangeEvent,
+  Dispatch,
+  HTMLInputTypeAttribute,
+  SetStateAction,
+} from "react";
 
 export interface InputProps {
   name: string;
@@ -11,4 +17,5 @@ export interface InputProps {
 export interface handlerOnChangeEventProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   event: ChangeEvent<HTMLInputElement>;
+  setMessageError: Dispatch<SetStateAction<string>>;
 }

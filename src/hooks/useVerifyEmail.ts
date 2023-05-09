@@ -2,10 +2,10 @@
 import GlobalError from "@/erros/globalErros";
 
 // Types
-import { UseVerifyEmailProps } from "@/types/useVerifyEmail.types";
+import { UseVerifyEmailProps } from "@/types/hook/useVerifyEmail.types";
 
 export default function UseVerifyEmail({ email }: UseVerifyEmailProps) {
-  // todo: Find the user with this email
+  // todo: Find the user in DB
   if (email.trim() !== "") {
     if (email === "example@gmail.com") return email;
 

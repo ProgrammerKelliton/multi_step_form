@@ -6,7 +6,7 @@ describe("Navigation", () => {
 
   // Functions
   function ClickOnNextButtonAndVerifyIfGoBackExists() {
-    for (let index = 0; index !== 4; index++) {
+    for (let index = 0; index !== 3; index++) {
       cy.contains(NEXT_STEP_BUTTON).click();
       cy.contains(GO_BACK_BUTTON);
 

@@ -1,5 +1,5 @@
 // Types
-import { ErrorMessageLabelProps } from "@/types/ErrorMessageLabel.types";
+import { ErrorMessageLabelProps } from "@/types/components/atoms/ErrorMessageLabel.types";
 
 export default function ErrorMessageLabel({
   messageError,

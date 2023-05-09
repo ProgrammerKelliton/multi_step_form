@@ -1,6 +1,6 @@
 import { SetStateAction } from "react";
-import { AddonType, Addons } from "./addon.types";
-import { BillingMethod } from "./plan.types";
+import { AddonType, Addons } from "../molecules/addon.types";
+import { BillingMethod } from "../molecules/plan.types";
 
 export interface AddonsSelected extends Addons {
   addonsSelected: Addons[] | [];

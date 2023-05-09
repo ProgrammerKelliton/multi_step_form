@@ -1,5 +1,5 @@
 // Types
-import { NextStepProps } from "@/types/nextStep.types";
+import { NextStepProps } from "@/types/components/atoms/nextStep.types";
 
 export default function NextStep({
   onClick,

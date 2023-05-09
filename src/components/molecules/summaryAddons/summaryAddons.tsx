@@ -1,6 +1,10 @@
-// Components
+// React
 import { useContext } from "react";
+
+// Components
 import AddonsInfo from "../../atoms/addonsInfo/addonsInfo";
+
+// Context
 import { GlobalContext } from "@/context/global";
 
 export default function SummaryAddons() {

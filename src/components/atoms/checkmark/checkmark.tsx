@@ -1,10 +1,7 @@
-export default function CheckMark({
-  onClick,
-  forceChecked,
-}: {
-  onClick: () => void;
-  forceChecked?: boolean;
-}) {
+// Types
+import { CheckMarckProps } from "@/types/components/atoms/checkmark.types";
+
+export default function CheckMark({ onClick, forceChecked }: CheckMarckProps) {
   return (
     <input
       readOnly

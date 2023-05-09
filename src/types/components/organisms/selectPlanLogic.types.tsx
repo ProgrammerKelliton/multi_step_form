@@ -1,6 +1,9 @@
+// React
 import { Dispatch, SetStateAction } from "react";
-import { BillingMethod, PlanType } from "@/types/plan.types";
-import { Addons } from "./addon.types";
+
+// Types
+import { BillingMethod, PlanType } from "../molecules/plan.types";
+import { Addons } from "../molecules/addon.types";
 
 export interface handlerOnClickBillingMethodProps {
   billingMethod: BillingMethod;
@@ -21,4 +24,10 @@ export interface changeAddonsSelectedProps extends BillingMethod {
 
 export interface changePriceAddonsProps extends BillingMethod {
   addon: Addons;
+}
+
+export interface handlerOnClickProps {
+  plan: PlanType;
+  setPlanSelected: Dispatch<SetStateAction<PlanType>>;
+  billingMethodIsMonthy: boolean;
 }

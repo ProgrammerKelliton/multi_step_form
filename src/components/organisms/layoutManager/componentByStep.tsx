@@ -1,5 +1,5 @@
 // Types
-import { NumberOfStep } from "@/types/step.types";
+import { NumberOfStep } from "@/types/components/atoms/step.types";
 
 // Components
 import Thanks from "@/components/molecules/thanks/thanks";

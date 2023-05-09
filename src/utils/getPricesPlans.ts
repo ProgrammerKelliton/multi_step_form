@@ -1,4 +1,7 @@
-import { PlanType } from "@/types/plan.types";
+// Types
+import { PlanType } from "@/types/components/molecules/plan.types";
+
+// Json
 import content from "../content/plansValues.json";
 
 export default function getPricesPlans({ plan }: PlanType) {

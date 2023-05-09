@@ -1,6 +1,9 @@
+// React
 import { Dispatch, SetStateAction } from "react";
-import { BillingMethod, PlanType } from "./plan.types";
-import { Addons } from "./addon.types";
+
+// Types
+import { BillingMethod, PlanType } from "../components/molecules/plan.types";
+import { Addons } from "../components/molecules/addon.types";
 
 export interface GlobalContextState {
   step: {

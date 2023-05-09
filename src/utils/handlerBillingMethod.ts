@@ -1,5 +1,5 @@
 // Types
-import { BillingMethod } from "@/types/plan.types";
+import { BillingMethod } from "@/types/components/molecules/plan.types";
 
 export default function handlerBillingMethod({
   method,

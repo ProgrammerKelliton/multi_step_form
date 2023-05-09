@@ -1,5 +1,5 @@
 // Types
-import { PriceProps } from "@/types/price.types";
+import { PriceProps } from "@/types/components/atoms/price.types";
 
 export default function Price({
   priceMonth,
