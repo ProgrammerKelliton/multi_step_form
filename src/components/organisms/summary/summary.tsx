@@ -23,7 +23,7 @@ export default function Summary() {
   const prefix = method === "monthy" ? "mo" : "yr";
 
   return (
-    <section className="w-3/4 flex flex-col gap-8">
+    <section className="w-3/4 flex flex-col gap-8 max-sm:w-full">
       <div className="bg-slate-50 p-8 rounded-xl flex gap-8 flex-col">
         <SummaryPlan />
         {addonsSelected.length > 0 && (

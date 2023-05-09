@@ -22,7 +22,7 @@ export default function Navigation() {
 
   if (number === 4) {
     return (
-      <div className="w-3/4 flex justify-between">
+      <div className="w-3/4 max-sm:w-full flex justify-between">
         <GoBack
           number={number}
           onClick={() => Navigate({ action: "back", setStep })}
@@ -39,7 +39,7 @@ export default function Navigation() {
   if (number === 5) return <></>;
 
   return (
-    <div className="w-3/4 flex justify-between">
+    <div className="w-3/4 max-sm:w-full flex justify-between">
       <GoBack
         number={number}
         onClick={() => Navigate({ action: "back", setStep })}

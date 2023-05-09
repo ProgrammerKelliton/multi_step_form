@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Thanks() {
   return (
-    <div className="w-3/4 h-full flex justify-center items-center flex-col gap-8">
+    <div className="w-3/4 max-sm:w-full h-full flex justify-center items-center flex-col gap-8">
       <Image
         src={"/icons/thanks.svg"}
         width={80}

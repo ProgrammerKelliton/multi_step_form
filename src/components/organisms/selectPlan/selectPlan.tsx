@@ -35,8 +35,8 @@ export default function SelectPlan() {
   );
 
   return (
-    <div className="w-3/4 flex flex-col gap-8">
-      <div className="flex justify-between w-full gap-4 max-lg:flex-col max-lg:overflow-y-scroll max-lg:h-1/2">
+    <div className="w-3/4 max-sm:w-full flex flex-col gap-8">
+      <div className="flex justify-between w-full gap-4 max-lg:flex-col max-lg:overflow-y-scroll max-lg:h-2/4">
         <Plan
           icon="/icons/arcade.svg"
           alt="icon arcade"

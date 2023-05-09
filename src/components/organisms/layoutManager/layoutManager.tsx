@@ -31,7 +31,7 @@ export default function LayoutManager() {
   const CONFIRM_COMPONENT_NUMBER = 5;
 
   return (
-    <div className="w-full h-3/4 pt-10 flex gap-8 flex-col">
+    <div className="w-full max-sm:items-baseline max-md:items-center max-md:justify-center h-3/4 pt-10 flex gap-8 flex-col">
       {number !== CONFIRM_COMPONENT_NUMBER && (
         <Header
           title={content?.title || "loading"}

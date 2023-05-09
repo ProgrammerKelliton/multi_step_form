@@ -10,7 +10,7 @@ export default function Home() {
       <Container>
         <StepsManager />
 
-        <div className="w-2/3 max-lg:w-1/2 pt-10 flex gap-16 flex-col">
+        <div className="w-2/3 max-md:items-center max-md:justify-center max-md:w-full max-lg:w-1/2 pt-10 flex gap-16 flex-col">
           <LayoutManager />
 
           <Navigation />

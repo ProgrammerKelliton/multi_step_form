@@ -24,7 +24,7 @@ export default function PickAddons() {
   } = useContext(GlobalContext);
 
   return (
-    <div className="w-3/4 flex flex-col gap-6 max-lg:overflow-x-scroll max-lg:w-11/12 max-lg:h-2/3">
+    <div className="w-3/4 flex max-sm:w-full flex-col gap-6 max-lg:overflow-x-scroll">
       <Addon
         name="Online service"
         descrition="Access to multiplayer games"

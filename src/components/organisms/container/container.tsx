@@ -59,7 +59,7 @@ export default function Container({ children }: ContainerProps) {
         },
       }}
     >
-      <div className="bg-white max-xl:w-11/12 w-2/3 h-3/4 rounded-2xl shadow-slate-100 p-4 flex justify-between">
+      <div className="bg-white max-md:flex-col max-md:w-full max-md:h-full max-xl:w-11/12 w-2/3 h-3/4 rounded-2xl shadow-slate-100 p-4 flex justify-between">
         {children}
       </div>
     </GlobalContext.Provider>
