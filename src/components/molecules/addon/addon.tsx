@@ -3,7 +3,7 @@ import CheckMark from "@/components/atoms/checkmark/checkmark";
 import Text from "@/components/atoms/text/text";
 
 // Types
-import { AddonProps } from "@/types/addon.types";
+import { AddonProps } from "@/types/components/molecules/addon.types";
 
 // React
 import { useEffect, useState } from "react";

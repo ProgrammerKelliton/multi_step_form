@@ -25,7 +25,7 @@ export default function Plan({
 
   return (
     <div
-      className={`${borderColor} ${backgroundColor} border-2 cursor-pointer rounded-xl border-solid p-4 w-44 hover:border-purplish-blue flex gap-16 flex-col`}
+      className={`${borderColor} ${backgroundColor} border-2 cursor-pointer rounded-xl border-solid p-4 w-44 max-xl:w-36 max-lg:flex-row max-lg:w-full hover:border-purplish-blue flex gap-16 flex-col`}
       onClick={onClick}
     >
       <Image src={icon} width={ICON_SIZE} height={ICON_SIZE} alt={alt} />
