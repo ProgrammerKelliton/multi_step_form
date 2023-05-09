@@ -3,6 +3,7 @@
 // Types
 import { BillingMethod, PlanType } from "@/types/plan.types";
 import { ContainerProps } from "@/types/container.types";
+import { Addons } from "@/types/addon.types";
 
 // Global
 import { GlobalContext } from "@/context/global";
@@ -10,7 +11,7 @@ import { GlobalContext } from "@/context/global";
 // React
 import { useState } from "react";
 
-import { Addons } from "@/types/addon.types";
+// Utils
 import getPricesPlans from "@/utils/getPricesPlans";
 
 export default function Container({ children }: ContainerProps) {

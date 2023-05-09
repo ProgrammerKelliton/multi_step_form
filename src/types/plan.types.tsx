@@ -18,8 +18,8 @@ export interface BillingMethod {
 }
 
 export interface PlanType {
-  plan: planType;
   price?: number;
+  plan: planType;
 }
 
 export interface PlanProps {

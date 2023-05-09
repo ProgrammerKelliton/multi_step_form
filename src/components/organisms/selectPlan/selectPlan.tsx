@@ -4,14 +4,15 @@ import Plan from "@/components/molecules/plan/plan";
 
 // Context
 import { GlobalContext } from "@/context/global";
-import getPricesPlans from "@/utils/getPricesPlans";
-
 
 // Utils
-import handlerBillingMethod from "@/utils/handlerBillingMethod";
+import getPricesPlans from "@/utils/getPricesPlans";
 
 // React
 import { useContext, useEffect, useState } from "react";
+
+// Logic
+import { handlerOnClickBillingMethod } from "./selectPlanLogic";
 
 export default function SelectPlan() {
   const {
@@ -21,6 +22,7 @@ export default function SelectPlan() {
       billingMethod,
       setBillingMethod,
     },
+    addons: { addonsSelected, setAddonsSelected },
   } = useContext(GlobalContext);
 
   const [billingMethodIsMonthy, setBillingMethodIsMonthy] = useState(
@@ -46,7 +48,9 @@ export default function SelectPlan() {
           onClick={() =>
             setPlanSelected({
               plan: "Arcade",
-              price: billingMethodIsMonthy ? 9 : 90,
+              price: billingMethodIsMonthy
+                ? getPricesPlans({ plan: "Arcade" }).monthly
+                : getPricesPlans({ plan: "Arcade" }).yearly,
             })
           }
           showMonthPrice={billingMethodIsMonthy}
@@ -93,17 +97,13 @@ export default function SelectPlan() {
 
       <BillingMethod
         onClick={() => {
-          const method = handlerBillingMethod(billingMethod).method;
-
-          setBillingMethod({
-            method: method,
-          });
-          setPlanSelected({
-            plan: plan,
-            price:
-              method === "monthy"
-                ? getPricesPlans({ plan }).monthly
-                : getPricesPlans({ plan }).yearly,
+          handlerOnClickBillingMethod({
+            addonsSelected,
+            billingMethod,
+            plan: { plan: plan },
+            setAddonsSelected,
+            setBillingMethod,
+            setPlanSelected,
           });
         }}
         monthlyIsSelected={billingMethodIsMonthy}
