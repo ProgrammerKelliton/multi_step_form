@@ -6,7 +6,7 @@ import {
   handlerOnClickBillingMethodProps,
   handlerOnClickProps,
 } from "@/types/components/organisms/selectPlanLogic.types";
-import { Addons } from "@/types/addon.types";
+import { Addons } from "@/types/components/molecules/addon.types";
 
 // Utils
 import handlerBillingMethod from "@/utils/handlerBillingMethod";

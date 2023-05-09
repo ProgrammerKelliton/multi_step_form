@@ -1,12 +1,11 @@
 // Types
-import { Addons } from "@/types/addon.types";
-
+import { Addons } from "@/types/components/molecules/addon.types";
 import {
   RemoveAddonProps,
   getPriceProps,
   handlerAddAndRemoveAddonsProps,
   isSelectedProps,
-} from "@/types/pickAddonsLogic.types";
+} from "@/types/components/organisms/pickAddonsLogic.types";
 
 // Utils
 import getPricesAddons from "@/utils/getPricesAddons";

@@ -1,4 +1,5 @@
-import { SumTotalValueProps } from "@/types/summary.types";
+// Types
+import { SumTotalValueProps } from "@/types/components/organisms/summary.types";
 
 function SumTotalValue({ addonsSelected, planSelected }: SumTotalValueProps) {
   let total = 0;
