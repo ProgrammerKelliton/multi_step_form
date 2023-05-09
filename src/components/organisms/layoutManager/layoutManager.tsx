@@ -28,13 +28,16 @@ export default function LayoutManager() {
     if (layoutContent) setContent(layoutContent);
   }, [number]);
 
-  return (
-    <div className="w-full pt-10 flex gap-8 flex-col">
-      <Header
-        title={content?.title || "loading"}
-        subTitle={content?.subTitle || "loading"}
-      />
+  const CONFIRM_COMPONENT_NUMBER = 5;
 
+  return (
+    <div className="w-full h-3/4 pt-10 flex gap-8 flex-col">
+      {number !== CONFIRM_COMPONENT_NUMBER && (
+        <Header
+          title={content?.title || "loading"}
+          subTitle={content?.subTitle || "loading"}
+        />
+      )}
       <ComponentByStep number={number} />
     </div>
   );

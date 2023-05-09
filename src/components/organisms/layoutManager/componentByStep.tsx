@@ -2,6 +2,7 @@
 import { NumberOfStep } from "@/types/step.types";
 
 // Components
+import Thanks from "@/components/molecules/thanks/thanks";
 import PickAddons from "../pickAddons/pickAddons";
 import SelectPlan from "../selectPlan/selectPlan";
 import Summary from "../summary/summary";
@@ -17,6 +18,8 @@ export default function ComponentByStep({ number }: NumberOfStep) {
       return <PickAddons />;
     case 4:
       return <Summary />;
+    case 5:
+      return <Thanks />;
     default:
       return <></>;
   }
