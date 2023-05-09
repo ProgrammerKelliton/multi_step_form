@@ -14,8 +14,13 @@ import { SumTotalValue } from "./summaryLogic";
 export default function Summary() {
   const {
     addons: { addonsSelected },
-    plan: { planSelected },
+    plan: {
+      planSelected,
+      billingMethod: { method },
+    },
   } = useContext(GlobalContext);
+
+  const prefix = method === "monthy" ? "mo" : "yr";
 
   return (
     <section className="w-3/4 flex flex-col gap-8">
@@ -32,7 +37,7 @@ export default function Summary() {
       <div className="flex justify-between px-8">
         <span className="text-cool-gray">Total (per year)</span>
         <span className="text-purplish-blue font-bold text-xl">
-          ${SumTotalValue({ addonsSelected, planSelected })}/yr
+          ${SumTotalValue({ addonsSelected, planSelected })}/{prefix}
         </span>
       </div>
     </section>

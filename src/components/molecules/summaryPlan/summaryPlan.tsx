@@ -17,19 +17,24 @@ export default function SummaryPlan() {
   } = useContext(GlobalContext);
 
   const changeToStep = 2;
+  const prefix = billingMethod.method === "monthy" ? "mo" : "yr";
 
   return (
     <div className="flex justify-between w-full items-center">
       <div className="flex flex-col">
         <Text name={`${plan} (${billingMethod.method})`} className="text-lg" />
         <span
-          className="text-cool-gray hover:underline font-medium hover:cursor-pointer"
+          className="text-cool-gray underline hover:text-purplish-blue font-medium hover:cursor-pointer"
           onClick={() => setStep(changeToStep)}
         >
           Change
         </span>
       </div>
-      <Text name={`$${price}/mo`} className="text-lg" fontWeight="font-bold" />
+      <Text
+        name={`$${price}/${prefix}`}
+        className="text-lg"
+        fontWeight="font-bold"
+      />
     </div>
   );
 }
